@@ -56,7 +56,7 @@
     <div class="flex flex-wrap gap-4 mt-3 px-4 mx-3">
         @foreach ($events as $event)
             @if ($event->user_id == Auth::user()->id)
-                <div class="card" style="width: 18rem;">
+                <div class="card bg-white border-none shadow-lg" style="width: 18rem;">
                     <div class="card-body">
                         <h3 class="card-title font-bold">{{ $event->name }}</h3>
                         <p class="card-text">{{ $event->descriptions }}</p>
