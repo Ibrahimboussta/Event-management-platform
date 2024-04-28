@@ -67,14 +67,24 @@
             </a>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <div class="flex gap-3">
+
+                    <a href="{{ route('ticket') }}" class="text-black ">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+
                     <button type="button"
-                        class="text-white bg-blue-400 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        <a href="{{ route('login') }}" class="text-[#000] no-underline text-l">Login</a>
+                        class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        <a href="{{ route('login') }}" class="no-underline text-lg text-white">Login</a>
                     </button>
 
                     <button type="button"
-                        class="text-white bg-blue-400 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        <a href="{{ route('register') }}" class="text-[#000] no-underline text-l">Register</a>
+                        class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        <a href="{{ route('register') }}" class="no-underline text-lg text-white">Register</a>
                     </button>
                 </div>
 
@@ -136,40 +146,40 @@
 
 
 
-   <!-- component -->
-<!-- This is an example component -->
-<div class=" bg-white">
-    <div class="max-w-2xl mx-auto text-black py-10">
-        <div class="text-center">
-            <h3 class="text-3xl mb-3"> Download our fitness app </h3>
-            <p> Stay fit. All day, every day. </p>
-            <div class="flex justify-center my-10">
-                <div class="flex items-center border border-black w-auto rounded-lg px-4 py-2 w-52 mx-2">
-                    <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" class="w-7 md:w-8">
-                    <div class="text-left ml-3">
-                        <p class='text-xs text-black'>Download on </p>
-                        <p class="text-sm md:text-base"> Google Play Store </p>
+    <!-- component -->
+    <!-- This is an example component -->
+    <div class=" bg-white">
+        <div class="max-w-2xl mx-auto text-black py-10">
+            <div class="text-center">
+                <h3 class="text-3xl mb-3"> Download our fitness app </h3>
+                <p> Stay fit. All day, every day. </p>
+                <div class="flex justify-center my-10">
+                    <div class="flex items-center border border-black w-auto rounded-lg px-4 py-2 w-52 mx-2">
+                        <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" class="w-7 md:w-8">
+                        <div class="text-left ml-3">
+                            <p class='text-xs text-black'>Download on </p>
+                            <p class="text-sm md:text-base"> Google Play Store </p>
+                        </div>
                     </div>
-                </div>
-                <div class="flex items-center border border-black w-auto rounded-lg px-4 py-2 w-44 mx-2">
-                    <img src="https://cdn-icons-png.flaticon.com/512/888/888841.png" class="w-7 md:w-8">
-                    <div class="text-left ml-3">
-                        <p class='text-xs text-black'>Download on </p>
-                        <p class="text-sm md:text-base"> Apple Store </p>
+                    <div class="flex items-center border border-black w-auto rounded-lg px-4 py-2 w-44 mx-2">
+                        <img src="https://cdn-icons-png.flaticon.com/512/888/888841.png" class="w-7 md:w-8">
+                        <div class="text-left ml-3">
+                            <p class='text-xs text-black'>Download on </p>
+                            <p class="text-sm md:text-base"> Apple Store </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="mt-20 flex flex-col md:flex-row md:justify-between items-center text-sm text-gray-400">
-            <p class="order-2 text-black md:order-1 mt-8 md:mt-0"> &copy; Beautiful Footer, 2021. </p>
-            <div class="order-1 md:order-2">
-                <span class="px-2 text-black">About us</span>
-                <span class="px-2 text-black border-l">Contact us</span>
-                <span class="px-2 text-black border-l">Privacy Policy</span>
+            <div class="mt-20 flex flex-col md:flex-row md:justify-between items-center text-sm text-gray-400">
+                <p class="order-2 text-black md:order-1 mt-8 md:mt-0"> &copy; Beautiful Footer, 2021. </p>
+                <div class="order-1 md:order-2">
+                    <span class="px-2 text-black">About us</span>
+                    <span class="px-2 text-black border-l">Contact us</span>
+                    <span class="px-2 text-black border-l">Privacy Policy</span>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 </body>

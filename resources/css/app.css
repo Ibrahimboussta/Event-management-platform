@@ -46,6 +46,9 @@
     opacity: 1; /* Show the text */
 }
 
+.grayscale {
+    filter: grayscale(100%);
+}
 
 
 

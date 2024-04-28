@@ -5,156 +5,50 @@
 
         <h1 class="text-center py-3">Join All This Events Now!!!</h1>
         <div class="flex flex-wrap justify-center gap-4 mt-3 px-4 mx-3">
-            {{-- <div class="card" style="width: 19rem;">
-                <div class="card-body flex flex-col gap-y-1">
-                    <h3 class="card-text font-semibold">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, fugit!</h3>
-                    <h5 class="card-title font-sans"><b>Organiteur</b> : lorem</h5>
-                    <div class="flex flex-col gap-x-5">
-                        <div class="flex">
-                            <p class="card-text w-full"> <b>Start</b>:05:30:00</p>
-                            <p class="card-text w-full"><b>End</b>:18:00:00</p>
-                        </div>
+            
 
-                        <div class="flex">
-                            <p class="card-text w-full"> <b>Start</b>:2024-04-26</p>
-                            <p class="card-text w-full"><b>End</b>:2024-04-26</p>
-                        </div>
-
-
-                    </div>
-                    <p class="card-text"><B>locations</B> : Casablanca</p>
-                    <p class="card-text font-bold">Price : 999$</p>
-                    <button type="submit" class="border border-black w-[40%] rounded-lg px-3 py-1"><a href="{{ route('register') }}">Buy Event</a></button>
-
-                </div>
-            </div>
-
-            <div class="card" style="width: 19rem;">
-                <div class="card-body flex flex-col gap-y-1">
-                    <h3 class="card-text font-semibold">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, fugit!</h3>
-                    <h5 class="card-title font-sans"><b>Organiteur</b> : lorem</h5>
-                    <div class="flex flex-col gap-x-5">
-                        <div class="flex">
-                            <p class="card-text w-full"> <b>Start</b>:05:30:00</p>
-                            <p class="card-text w-full"><b>End</b>:18:00:00</p>
-                        </div>
-
-                        <div class="flex">
-                            <p class="card-text w-full"> <b>Start</b>:2024-04-26</p>
-                            <p class="card-text w-full"><b>End</b>:2024-04-26</p>
-                        </div>
-
-
-                    </div>
-                    <p class="card-text"><B>locations</B> : Casablanca</p>
-                    <p class="card-text font-bold">Price : 999$</p>
-                    <button type="submit" class="border border-black w-[40%] rounded-lg px-3 py-1"><a href="{{ route('register') }}">Buy Event</a></button>
-
-                </div>
-            </div>
-
-            <div class="card" style="width: 19rem;">
-                <div class="card-body flex flex-col gap-y-1">
-                    <h3 class="card-text font-semibold">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, fugit!</h3>
-                    <h5 class="card-title font-sans"><b>Organiteur</b> : lorem</h5>
-                    <div class="flex flex-col gap-x-5">
-                        <div class="flex">
-                            <p class="card-text w-full"> <b>Start</b>:05:30:00</p>
-                            <p class="card-text w-full"><b>End</b>:18:00:00</p>
-                        </div>
-
-                        <div class="flex">
-                            <p class="card-text w-full"> <b>Start</b>:2024-04-26</p>
-                            <p class="card-text w-full"><b>End</b>:2024-04-26</p>
-                        </div>
-
-
-                    </div>
-                    <p class="card-text"><B>locations</B> : Casablanca</p>
-                    <p class="card-text font-bold">Price : 999$</p>
-                    <button type="submit" class="border border-black w-[40%] rounded-lg px-3 py-1"><a href="{{ route('register') }}">Buy Event</a></button>
-
-                </div>
-            </div>
-
-            <div class="card" style="width: 19rem;">
-                <div class="card-body flex flex-col gap-y-1">
-                    <h3 class="card-text font-semibold">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, fugit!</h3>
-                    <h5 class="card-title font-sans"><b>Organiteur</b> : lorem</h5>
-                    <div class="flex flex-col gap-x-5">
-                        <div class="flex">
-                            <p class="card-text w-full"> <b>Start</b>:05:30:00</p>
-                            <p class="card-text w-full"><b>End</b>:18:00:00</p>
-                        </div>
-
-                        <div class="flex">
-                            <p class="card-text w-full"> <b>Start</b>:2024-04-26</p>
-                            <p class="card-text w-full"><b>End</b>:2024-04-26</p>
-                        </div>
-
-
-                    </div>
-                    <p class="card-text"><B>locations</B> : Casablanca</p>
-                    <p class="card-text font-bold">Price : 999$</p>
-                    <button type="submit" class="border border-black w-[40%] rounded-lg px-3 py-1"><a href="{{ route('register') }}">Buy Event</a></button>
-
-                </div>
-            </div>
-
-            <div class="card" style="width: 19rem;">
-                <div class="card-body flex flex-col gap-y-1">
-                    <h3 class="card-text font-semibold">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores, fugit!</h3>
-                    <h5 class="card-title font-sans"><b>Organiteur</b> : lorem</h5>
-                    <div class="flex flex-col gap-x-5">
-                        <div class="flex">
-                            <p class="card-text w-full"> <b>Start</b>:05:30:00</p>
-                            <p class="card-text w-full"><b>End</b>:18:00:00</p>
-                        </div>
-
-                        <div class="flex">
-                            <p class="card-text w-full"> <b>Start</b>:2024-04-26</p>
-                            <p class="card-text w-full"><b>End</b>:2024-04-26</p>
-                        </div>
-
-
-
-                    </div>
-                    <p class="card-text"><B>locations</B> : Casablanca</p>
-                    <p class="card-text font-bold">Price : 999$</p>
-                    <button type="submit" class="border border-black w-[40%] rounded-lg px-3 py-1"><a href="{{ route('register') }}">Buy Event</a></button>
-
-                </div>
-            </div> --}}
+            <form action="{{ route('search') }}" method="get">
+                <div class="flex items-center justify-around w-[100%] gap-x-5">
+                    <input name="search" type="text" placeholder="Search for an event"
+                           class="w-full z-40 text-black opacity-80 rounded-md" value="{{ isset($search) ? $search : '' }}">
+                           <button
+                           class="border border-white px-4 py-1 text-lg rounded-md bg-blue-600 text-white w-1/2 z-40 md:w-auto">Search</button>                </div>
+            </form>
 
             @foreach ($events as $event)
-                <div class="card" style="width: 19rem;">
-                    <div class="card-body flex flex-col gap-y-1">
-                        <h3 class="card-text font-semibold">{{ $event->descriptions }}</h3>
-                        <h5 class="card-title font-sans"><b>Organiteur</b> : {{ $event->name }}</h5>
-                        <div class="flex flex-col gap-x-5">
-                            <div class="flex">
-                                <p class="card-text w-full"> <b>Start</b>:{{ $event->timeStart }}</p>
-                                <p class="card-text w-full"><b>End</b>:{{ $event->timeEnd }}</p>
-                            </div>
+            <div class="card" style="width: 19rem;">
+                <div class="card-body flex flex-col gap-y-1">
+                    <h3 class="card-text font-semibold">{{ $event->descriptions }}</h3>
+                    <h5 class="card-title font-sans"><b>Organiteur</b> : {{ $event->name }}</h5>
+                    <div class="flex flex-col gap-x-5">
+                        <div class="flex">
+                            <p class="card-text w-full"> <b>Start</b>:{{ $event->timeStart }}</p>
+                            <p class="card-text w-full"><b>End</b>:{{ $event->timeEnd }}</p>
+                        </div>
 
-                            <div class="flex">
-                                <p class="card-text w-full"> <b>Start</b>:{{ $event->dateStart }}</p>
-                                <p class="card-text w-full"><b>End</b>:{{ $event->dateEnd }}</p>
-                                
-                            </div>
-
+                        <div class="flex">
+                            <p class="card-text w-full"> <b>Start</b>:{{ $event->dateStart }}</p>
+                            <p class="card-text w-full"><b>End</b>:{{ $event->dateEnd }}</p>
 
                         </div>
-                        <p class="card-text"><B>locations</B> : {{ $event->locations }}</p>
-                        <p class="card-text font-bold">Price : {{ $event->price }}$</p>
-                        <form method="post" action="{{ route('events.buy', $event) }}">
+
+
+                    </div>
+                    <p class="card-text"><B>locations</B> : {{ $event->locations }}</p>
+                    <p class="card-text font-bold">Price : {{ $event->price }}$</p>
+                    <div class="flex gap-3">
+                        <form action="{{ route('event.pay', $event->id) }}" method="post">
                             @csrf
-                            <button type="submit" class="border border-black rounded-lg px-3 py-1">Buy Event</button>
-                            <!-- Add a hidden input field to send the event's ID -->
-                            <input type="hidden" name="event_id" value="{{ $event->id }}">
+                            <input type="hidden" name="eventId" value="{{ $event->id }}"> <!-- Use eventId instead of event_id -->
+                            <input type="hidden" name="name" value="{{ $event->name }}">
+                            <input type="hidden" name="price" value="{{ $event->price }}">
+                            <input type="hidden" name="description" value="{{ $event->description }}">
+                            <button class="btn btn-primary">Shop Now</button>
                         </form>
+                        
                     </div>
                 </div>
+            </div>
             @endforeach
         </div>
     </section>

@@ -9,34 +9,34 @@ use Stripe\Stripe;
 class StripeController extends Controller
 {
     //
-    public function session(Request $request){
+    // public function session(Request $request){
 
-        Stripe::setApiKey(config('stripe.sk'));
+    //     Stripe::setApiKey(config('stripe.sk'));
          
-        $session = Session::create([
-            'line_items'  => [
-                [
-                    'price_data' => [
-                        'currency'     => 'usd',
-                        'product_data' => [
-                            "name" => "LionsGeek Product",
-                            "description"=> "nyehehehehe"
-                        ],
-                        'unit_amount'  => 6900,
-                    ],
-                    'quantity'   => 2,
-                ],
+    //     $session = Session::create([
+    //         'line_items'  => [
+    //             [
+    //                 'price_data' => [
+    //                     'currency'     => 'usd',
+    //                     'product_data' => [
+    //                         "name" => "LionsGeek Product",
+    //                         "description"=> "nyehehehehe"
+    //                     ],
+    //                     'unit_amount'  => 6900,
+    //                 ],
+    //                 'quantity'   => 2,
+    //             ],
 
-            ],
-            'mode'        => 'payment', // the mode  of payment
-            'success_url' => route('success'), // route when success 
-            'cancel_url'  => route('dashboard'), // route when  failed or canceled
-        ]);
-        return redirect()->away($session->url);
+    //         ],
+    //         'mode'        => 'payment', // the mode  of payment
+    //         'success_url' => route('success'), // route when success 
+    //         'cancel_url'  => route('dashboard'), // route when  failed or canceled
+    //     ]);
+    //     return redirect()->away($session->url);
 
-    }
+    // }
 
-    public function success(){
-        return back();
-    }
+    // public function success(){
+    //     return back();
+    // }
 }

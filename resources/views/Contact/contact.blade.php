@@ -2,7 +2,7 @@
 @section('content')
     <section class="">
        <div class="py-5">
-        <h1 class="text-center py-4 mt-5">Get in Touch</h1>
+        <h1 class="text-center py-4 mt-5">Contact us</h1>
         <div class="w-full md:w-full p-3">
             <iframe class="w-full px-10"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.058438495082!2d-7.536426624302653!3d33.6037881733292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cdb2f812837f%3A0xbbcfc74fbc11b2d9!2sLionsGeek!5e0!3m2!1sen!2sma!4v1714006301758!5m2!1sen!2sma"

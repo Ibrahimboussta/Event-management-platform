@@ -13,10 +13,10 @@ class EventController extends Controller
     //
     public function index()
     {
-        $user = User::where("id", auth()->user()->id)->first();
-        $event = Event::where("id", auth()->user()->id)->first();
-        return view('admin.oragnisateur', compact('user', 'event'));
+        $user = User::find(Auth::id())->load('events');
+        return view('admin.oragnisateur', compact('user'));
     }
+    
 
     public function event()
     {
@@ -25,20 +25,36 @@ class EventController extends Controller
     }
 
 
+    public function search(Request $request)
+    {
+        $search = $request->search;
+
+        $events = Event::where('name', 'like', "%$search%")
+            ->orWhere('descriptions', 'like', "%$search%")
+            ->orWhereHas('user', function ($query) use ($search) {
+                $query->where('name', 'like', '%$search%');
+            })
+            ->get();
+
+        return view('events.event', compact('events', 'search'));
+    }
+
+    public function  ticket()
+    {
+        return view('ticket.ticket');
+    }
+
     public function store(Request $request)
     {
-
         $user = Auth::user();
 
-        // $image = $request->input('image');
-        // $imgName = time() . "_" . $image->getClientOriginalName();
-        // $image->storeAs("public/img", $imgName);
+    
+        
 
         $event = Event::create(
             [
                 'user_id' => $user->id,
                 'name' => $request->name,
-                // 'image' => $request->image,
                 'descriptions' => $request->descriptions,
                 'dateStart' => $request->dateStart,
                 'dateEnd' => $request->dateEnd,
@@ -82,7 +98,7 @@ class EventController extends Controller
                             "name" => $request->name,
                             "description" => $request->description
                         ],
-                        'unit_amount'  => $request->price.'00', // amount should be in cents
+                        'unit_amount'  => $request->price . '00', // amount should be in cents
                     ],
                     'quantity'   => 1,
                 ],

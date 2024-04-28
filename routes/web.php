@@ -63,4 +63,9 @@ Route::post('/event/pay/{eventId}', [EventController::class, 'session'])->name('
 Route::get('/session', [StripeController::class, 'session']);
 Route::get('/success', [StripeController::class, 'success'])->name('success');
 Route::delete('/user/delete/{user}', [UserController::class, 'destroy'])->name('user.delete');
+
+
+Route::get('/search', [EventController::class, 'search'])->name('search');
+
+Route::get('/ticket', [EventController::class, 'ticket'])->name('ticket');
 require __DIR__.'/auth.php';

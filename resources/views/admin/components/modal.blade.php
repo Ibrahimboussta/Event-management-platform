@@ -9,11 +9,7 @@
                     autocomplete="name" />
             </div>
 
-            {{-- <div>
-                <x-input-label class="text-black" for="image" :value="__('Image')" />
-                <x-text-input class="block mt-1 w-full border border-gray-200" type="file" name="image" required autofocus
-                    autocomplete="name" />
-            </div> --}}
+           
 
             <div class="mt-4">
                 <x-input-label class="text-black" for="descriptions" :value="__('Descriptions')" />
