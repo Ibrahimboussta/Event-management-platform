@@ -76,7 +76,7 @@ class EventController extends Controller
         if (!Auth::check()) {
             // Handle unauthenticated user (e.g., redirect to login page)
             return redirect()->route('register');
-        }
+        }   
 
         $user = Auth::user();
         if (!$user->events()->where('calendar_id', $eventId)->exists()) {
@@ -109,7 +109,9 @@ class EventController extends Controller
         ]);
 
         return redirect()->away($session->url);
+        
     }
+    
 
 
 

@@ -59,7 +59,7 @@
 
 
 
-    <nav class="lg:w-full fixed z-50  border-b-2 bg-white  md:px-5 w-full">
+    <nav class="lg:w-full fixed z-50 border-b-2 lg:p-0 p-[20px] bg-white  md:px-5 w-full">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
             <a href="{{ route('welcome') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <span
@@ -78,13 +78,13 @@
                     </a>
 
                     <button type="button"
-                        class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        <a href="{{ route('login') }}" class="no-underline text-lg text-white">Login</a>
+                        class="text-white bg-blue-600 hidden xl:block hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        <a href="{{ route('login') }}" class="no-underline text-l text-white">Login</a>
                     </button>
 
                     <button type="button"
                         class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        <a href="{{ route('register') }}" class="no-underline text-lg text-white">Register</a>
+                        <a href="{{ route('register') }}" class="no-underline text-l text-white">Register</a>
                     </button>
                 </div>
 
@@ -99,9 +99,9 @@
                     </svg>
                 </button>
             </div>
-            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+            <div class="items-center justify-between hidden xl:ml-[100px] ml-0 w-full md:flex md:w-auto md:order-1" id="navbar-cta">
                 <ul
-                    class="flex flex-col font-medium  md:p-0 mt-4 border  rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 border-none  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    class="flex flex-col font-medium  md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 border-none  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
 
                     <li>
                         <a href="{{ route('about.about') }}"
@@ -151,7 +151,7 @@
     <div class=" bg-white">
         <div class="max-w-2xl mx-auto text-black py-10">
             <div class="text-center">
-                <h3 class="text-3xl mb-3"> Download our fitness app </h3>
+                <h3 class="text-3xl mb-3"> Download our Eventbrite app </h3>
                 <p> Stay fit. All day, every day. </p>
                 <div class="flex justify-center my-10">
                     <div class="flex items-center border border-black w-auto rounded-lg px-4 py-2 w-52 mx-2">
@@ -171,7 +171,7 @@
                 </div>
             </div>
             <div class="mt-20 flex flex-col md:flex-row md:justify-between items-center text-sm text-gray-400">
-                <p class="order-2 text-black md:order-1 mt-8 md:mt-0"> &copy; Beautiful Footer, 2021. </p>
+                <p class="order-2 text-black md:order-1 mt-8 md:mt-0"> &copy; Beautiful Footer, 2024. </p>
                 <div class="order-1 md:order-2">
                     <span class="px-2 text-black">About us</span>
                     <span class="px-2 text-black border-l">Contact us</span>

@@ -48,7 +48,16 @@
 
 .grayscale {
     filter: grayscale(100%);
+    transition: all
 }
+
+.grayscale:hover{
+    filter: none;
+
+}
+
+
+
 
 
 

@@ -54,7 +54,7 @@
 
 
             @foreach ($events->take(8) as $event)
-                <div class="card bg-white border-none shadow-lg" style="width: 19rem;">
+                <div class="card bg-white border-none hover:scale-105 transition-all hover:shadow-xl" style="width: 19rem;">
                     <div class="card-body flex flex-col gap-y-1">
                         <h3 class="card-text font-semibold">{{ $event->descriptions }}</h3>
                         <h5 class="card-title font-sans"><b>Organiteur</b> : {{ $event->name }}</h5>
