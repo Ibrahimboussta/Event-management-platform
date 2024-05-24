@@ -14,17 +14,15 @@
                 <form method="POST" action="{{ route('contact.store') }}">
                     @csrf
 
-                    <!-- Name -->
                     <div class="flex flex-wrap items-center justify-center gap-4 px-5 py-4">
-                        <div class="w-[40%]">
+                        <div class="w-full md:w-[40%]">
                             <x-input-label for="first_name" :value="__('First name')" />
                             <x-text-input placeholder="First name" id="first_name" class="block mt-1 w-full" type="text"
                                 name="first_name" :value="old('first_name')" required autofocus autocomplete="name" />
                             <x-input-error :messages="$errors->get('first_name')" class="mt-2" />
                         </div>
 
-                        <!-- Email Address -->
-                        <div class="w-[40%]">
+                        <div class="w-full md:w-[40%]">
                             <x-input-label for="last_name" :value="__('Last name')" />
                             <x-text-input placeholder="Last name" id="last_name" class="block mt-1 w-full" type="text"
                                 name="last_name" :value="old('last_name')" required autocomplete="username" />
@@ -32,39 +30,28 @@
                         </div>
                     </div>
 
-                    <!-- Name -->
-                    <div class="flex flex-wrap items-center  justify-center gap-4 px-5 py-2">
-                        <div class="w-[40%]">
+                    <div class="flex flex-wrap items-center justify-center gap-4 px-5 py-2">
+                        <div class="w-full md:w-[40%]">
                             <x-input-label for="email" :value="__('Email')" />
                             <x-text-input placeholder="Email" id="email" class="block mt-1 w-full" type="email"
                                 name="email" :value="old('email')" required autofocus autocomplete="name" />
                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
                         </div>
 
-                        <!-- Email Address -->
-                        <div class="w-[40%]">
+                        <div class="w-full md:w-[40%]">
                             <x-input-label for="phone" :value="__('Phone')" />
                             <x-text-input placeholder="Phone" id="phone" class="block mt-1 w-full" type="number"
                                 name="phone" :value="old('phone')" required autocomplete="username" />
                             <x-input-error :messages="$errors->get('phone')" class="mt-2" />
                         </div>
-
-
                     </div>
 
-                    <div class="flex justify-start items-center flex-col gap-2">
+                    <div class="flex flex-wrap justify-start items-center flex-col gap-2 px-5">
                         <x-input-label for="message" :value="__('Message')" class="" />
-                        <textarea placeholder="Message" class="border border-gray-300 shadow-sm rounded-md" name="message" id=""
+                        <textarea placeholder="Message" class="border border-gray-300 shadow-sm rounded-md lg:w-[60vw] w-full" name="message" id=""
                             cols="135" rows="10"></textarea>
-
-                    </div>
-                    <div class="flex justify-center mt-2">
-
-                        <button class=" border border-black px-3 py-1 rounded-lg">Submit</button>
                     </div>
 
-                </form>
-            </div>
+
     </section>
-    </div>
 @endsection

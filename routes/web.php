@@ -68,4 +68,6 @@ Route::delete('/user/delete/{user}', [UserController::class, 'destroy'])->name('
 Route::get('/search', [EventController::class, 'search'])->name('search');
 
 Route::get('/ticket', [EventController::class, 'ticket'])->name('ticket');
+
+Route::post('/event/{event}', [EventController::class, 'show'])->name('detail.detail');
 require __DIR__.'/auth.php';

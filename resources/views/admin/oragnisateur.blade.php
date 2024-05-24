@@ -1,99 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.index')
+@section('content')
+    <section class="bg-gray-100 py-5">
+        <div class="py-5 mt-3">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
-
-</head>
-
-<body>
+       
 
 
-    <div class="flex justify-between px-8">
-        <h1 class="text-center mt-6 py-10">Welcome!! You can now create an event</h1>
-        <button class=""><a href="{{ route('welcome') }}" class=" bg-blue-700 px-4 py-2  no-underline text-white">Logout</a></button>
-    </div>
-    @include('admin.components.modal')
 
-
-    <!-- component -->
-    <!-- follow me on twitter @asad_codes -->
-    {{-- 
-    <div class="flex flex-wrap justify-center items-center h-screen">
-        <!-- card -->
-        @foreach ($events as $event)
-        <div class="overflow-hidden shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-5 hover:shadow-2xl rounded-lg h-90 w-60 md:w-80 cursor-pointer m-4">
-            <img alt="event photo" src="{{ asset("storage/img/" . $image->image) }}" class="h-40 w-full object-cover" />
-            <div class="bg-white w-full p-4">
-                <p class="text-indigo-500 text-2xl font-medium">{{ $event->descriptions }}</p>
-                <p class="text-gray-800 text-sm font-medium mb-2">
-                    <span>{{ $event->date }}</span>
-                    <span>{{ $event->time }}</span>
-                </p>
-                <p class="text-gray-600 font-light text-md">{{ $event->locations }}</p>
-                <div class="flex flex-wrap justify-start items-center py-3 border-b-2 text-xs text-white font-medium">
-                    <span class="m-1 px-2 py-1 rounded bg-indigo-500">{{ $event->price }}</span>
-                </div>
-                <div class="flex items-center mt-2">
-                    <img class="w-10 h-10 object-cover rounded-full" alt="User avatar" src="{{ asset("storage/img/" . $image->image) }}">
-                    <div class="pl-3">
-                        <div class="font-medium">{{ $event->user->name }}</div>
-                    </div>
-                </div>
+            <div class="flex justify-center px-8">
+                <h1 class="text-center mt-6">Welcome!! You can now create an event</h1>
+               
             </div>
-        </div>
-        @endforeach
-    </div> --}}
-
-
-    <!-- Does this resource worth a follow? -->
-
-    <div class="flex flex-wrap gap-4 mt-3 px-4 mx-3">
-        @foreach ($events as $event)
-            @if ($event->user_id == Auth::user()->id)
-                <div class="card bg-white border-none shadow-lg" style="width: 18rem;">
-                    <div class="card-body">
-                        <h3 class="card-title font-bold">{{ $event->name }}</h3>
-                        <p class="card-text">{{ $event->descriptions }}</p>
-                        <div class="flex justify-start gap-x-5">
-                            <p class="card-text">{{ $event->date }}</p>
-                            <p class="card-text">{{ $event->time }}</p>
-                        </div>
-                        <p class="card-text">{{ $event->locations }}</p>
-                        <p class="card-text font-bold">{{ $event->price }}</p>
-                        <div class="flex gap-3">
-                            <button>@include('admin.components.edit')</button>
-                            <form method="POST" action="{{ route('events.destroy', $event->id) }}">
-                                @csrf
-                                @method('DELETE')
-
-                                <!-- Add a button to confirm deletion -->
-                                <button class="border border-black px-3 py-1 rounded-lg" type="submit"
-                                    onclick="return confirm('Are you sure you want to delete this event?')">
-                                    Delete
-                                </button>
-                            </form>
+            @include('admin.components.modal')
+        
+        
+        
+        
+            <div class="flex flex-wrap justify-center gap-4 mt-3 px-4 mx-3">
+                @foreach ($events as $event)
+                    @if ($event->user_id == Auth::user()->id)
+                    <div class=" flex justify-center items-center py-10">
+                        <div class="md:px-4 md:grid md:grid-cols-2 lg:flex flex-wrap gap-5 space-y-4 md:space-y-0">
+                            <div
+                                class="max-w-sm bg-white  px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
+                                <h3 class="mb-3 text-xl font-bold text-indigo-600">{{ $event->name }}</h3>
+                                <div class="relative">
+        
+                                    <img class="w-full h-60 rounded-xl object-cover" src="{{ asset('storage/img/' . $event->image) }}" alt="">
+        
+                                    {{-- <p
+                                        class="absolute top-0 bg-yellow-300 text-gray-800 font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">
+                                        FREE</p> --}}
+                                </div>
+                                <h1 class="mt-4 text-gray-800 text-2xl font-bold cursor-pointer">{{ $event->descriptions }}
+                                </h1>
+                                <div class="my-4">
+                                    <div class="flex space-x-1 items-center">
+                                        <span class="mb-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600 mb-1.5"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </span>
+                                        <p>{{ $event->timeStart }}</p>
+                                    </div>
+                                    <div class="flex space-x-1 items-center">
+                                        <span class="mb-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600 mb-1.5"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                            </svg>
+                                        </span>
+                                        <p>{{ $event->dateStart }}</p>
+                                    </div>
+                                    <div class="flex space-x-1 items-center">
+                                        <span class="mb-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600 mb-1.5"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                            </svg>
+                                        </span>
+                                        <div class="flex gap-2">
+                                            <p>{{ $event->price }}$</p>
+                                            <p class="line-through">{{ $event->old_price }}$</p>
+                                        </div>
+                                    </div>
+        
+        
+                                    <div class="mt-4 text-xl w-full text-white bg-indigo-600 py-2 rounded-xl shadow-lg">
+                                        <form action="{{ route('event.pay', $event->id) }}" method="post">
+                                            @csrf
+                                            <input type="hidden" name="eventId" value="{{ $event->id }}">
+                                            <!-- Use eventId instead of event_id -->
+                                            <input type="hidden" name="name" value="{{ $event->name }}">
+                                            <input type="hidden" name="price" value="{{ $event->price }}">
+                                            <input type="hidden" name="description" value="{{ $event->description }}">
+                                            <button class="btn text-center w-full text-white text-2xl">Buy event</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+        
                         </div>
                     </div>
-                </div>
-            @endif
-        @endforeach
+                    @endif
+                @endforeach
+            </div>
+        
+           
+    </section>
     </div>
+@endsection
 
 
 
 
 
-    <div class="text-black">
-        {{-- @foreach ($event->user as $user)
-            <h1>{{ $user->name }}</h1>
-        @endforeach --}}
-    </div>
-</body>
 
-</html>
+
+

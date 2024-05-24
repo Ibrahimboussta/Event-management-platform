@@ -1,5 +1,5 @@
 <!-- Button trigger modal -->
-    <button type="button" class="border border-black px-3 py-1 rounded-lg" data-bs-toggle="modal" data-bs-target="#events{{ $event->id }}">
+    <button type="button" class="inline-block rounded bg-[#1644ba] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong" data-twe-ripple-init data-twe-ripple-color="light" data-bs-toggle="modal" data-bs-target="#events{{ $event->id }}">
     Edit
 </button>
 
@@ -59,10 +59,14 @@
                     <!-- Password -->
                     <div class="mt-4">
                         <x-input-label for="price" :value="__('Price')" />
-
                         <x-text-input value="{{ old('price', $event->price) }}" class="block mt-1 w-full" type="number" name="price" required
                             autocomplete="price" />
+                    </div>
 
+                    <div class="mt-4">
+                        <x-input-label for="old_price" :value="__('Old Price')" />
+                        <x-text-input value="{{ old('old_price', $event->old_price) }}" class="block mt-1 w-full" type="number" name="old_price" required
+                            autocomplete="old_price" />
                     </div>
 
                     <div class="flex items-center justify-end mt-4 ">

@@ -40,42 +40,44 @@
                 <h1 class="text-center py-4 mt-5">Events</h1>
                 <div class="flex flex-wrap justify-center gap-4 mt-3 px-4 mx-3">
                     @foreach ($events as $event)
-                        <div class="card" style="width: 19rem;">
-                            <div class="card-body flex flex-col gap-y-1 shadow-md">
-                                <h3 class="card-text font-semibold text-blue-600">{{ $event->descriptions }}</h3>
-                                <h5 class="card-title font-sans"><b>Organiteur</b> : {{ $event->name }}</h5>
-                                <div class="flex flex-col gap-x-5">
-                                    <div class="flex">
-                                        <p class="card-text w-full"> <b>Start</b>:{{ $event->timeStart }}</p>
-                                        <p class="card-text w-full"><b>End</b>:{{ $event->timeEnd }}</p>
-                                    </div>
-
-                                    <div class="flex">
-                                        <p class="card-text w-full"> <b>Start</b>:{{ $event->dateStart }}</p>
-                                        <p class="card-text w-full"><b>End</b>:{{ $event->dateEnd }}</p>
-                                    </div>
-
-
+                    <div class="block rounded-lg bg-white hover:shadow-lg w-full md:w-[45%] lg:w-[30%] xl:w-[20%] shadow-secondary-1 dark:bg-surface-dark">
+                        <div class="relative overflow-hidden bg-cover bg-no-repeat" data-twe-ripple-init data-twe-ripple-color="light">
+                            <img class="rounded-t-lg w-full border border-black h-56" src="{{ asset('storage/img/' . $event->image) }}" alt="" />
+                            <a href="#!">
+                                <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsla(0,0%,98%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100">
                                 </div>
-                                <p class="card-text"><B>locations</B> : {{ $event->locations }}</p>
-                                <p class="card-text font-bold">Price : {{ $event->price }}$</p>
-                                <div class="flex gap-3">
+                            </a>
+                        </div>
+                        <div class="p-6 text-surface dark:text-white">
+                            <h5 class="mb-2 text-xl font-medium leading-tight">{{ $event->name }}</h5>
+                            <p class="mb-4 text-base line-clamp-1">
+                                {{ $event->descriptions }}
+                            </p>
+
+                             <div class="flex gap-3">
                                     <button>@include('admin.components.edit')</button>
                                     <form method="POST" action="{{ route('events.destroy', $event->id) }}">
                                         @csrf
                                         @method('DELETE')
 
                                         <!-- Add a button to confirm deletion -->
-                                        <button class="border border-black px-3 py-1 rounded-lg " type="submit"
+                                        <button class="inline-block rounded bg-[#1644ba] px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong" data-twe-ripple-init data-twe-ripple-color="light" type="submit"
                                             onclick="return confirm('Are you sure you want to delete this event?')">
                                             Delete
                                         </button>
                                     </form>
                                 </div>
-                            </div>
+                            
                         </div>
+                    </div>
+                    
+               
                     @endforeach
                 </div>
+
+
+
+                      
             </div>
             </div>
         </section>

@@ -29,7 +29,6 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin'
         ]);
 
-        // Find the 'admin' role and assign it to the admin user
         $adminRole = Role::where('name', 'Admin')->first();
         $admin->assignRole($adminRole);
     }

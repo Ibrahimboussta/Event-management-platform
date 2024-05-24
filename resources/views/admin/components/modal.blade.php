@@ -1,6 +1,6 @@
-<div class="flex flex-col lg:flex-row w-full">
+<div class="flex flex-col lg:flex-row items-center w-full">
     <div class="w-full lg:w-[45vw] p-5">
-        <form method="POST" action="/admin/post"  >
+        <form method="POST" action="/admin/post" enctype="multipart/form-data" >
             @csrf
             <!-- Name -->
             <div>
@@ -8,8 +8,6 @@
                 <x-text-input class="block mt-1 w-full" type="text" name="name" required autofocus
                     autocomplete="name" />
             </div>
-
-           
 
             <div class="mt-4">
                 <x-input-label class="text-black" for="descriptions" :value="__('Descriptions')" />
@@ -51,13 +49,24 @@
                 <x-text-input class="block mt-1 w-full" type="number" name="price" required autocomplete="price" />
             </div>
 
+            <div class="mt-4">
+                <x-input-label class="text-black" for="old_price" :value="__('Old Price')" />
+                <x-text-input class="block mt-1 w-full" type="number" name="old_price" required autocomplete="old_price" />
+            </div>
+
+            <div class="mt-4">
+                <x-input-label class="text-black" for="image" :value="__('Image')" />
+                <x-text-input class="block mt-1 w-full" type="file" name="image" required autocomplete="image" />
+            </div>
+
+
             <div class="flex items-center justify-end mt-4 ">
                 <button class="bg-gray-900 text-white px-4 py-1 rounded-md">Create</button>
             </div>
         </form>
     </div>
 
-    <div class="w-full lg:w-[50vw]">
+    <div class="w-full lg:w-[50vw] p-0">
         <div id="calendar" class="w-full"></div>
     </div>
 </div>

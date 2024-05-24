@@ -30,7 +30,7 @@ class StripeController extends Controller
             ],
             'mode'        => 'payment', // the mode  of payment
             'success_url' => route('success'), // route when success 
-            'cancel_url'  => route('dashboard'), // route when  failed or canceled
+            'cancel_url'  => route('welcome'), // route when  failed or canceled
         ]);
         return redirect()->away($session->url);
 

@@ -11,6 +11,7 @@ class Event extends Model
 
     protected $fillable = [
         'user_id',
+        'image',
         'name',
         'descriptions',
         'dateStart',
@@ -19,6 +20,7 @@ class Event extends Model
         'timeEnd',
         'locations',
         'price',
+        'old_price',
     ];
 
     public function user(){

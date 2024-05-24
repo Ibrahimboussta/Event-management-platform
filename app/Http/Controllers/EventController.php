@@ -16,12 +16,11 @@ class EventController extends Controller
         $user = User::find(Auth::id())->load('events');
         return view('admin.oragnisateur', compact('user'));
     }
-    
+
 
     public function event()
     {
-        $events = Event::all();
-        return view('events.event', compact('events'));
+        return view('events.event');
     }
 
 
@@ -46,25 +45,38 @@ class EventController extends Controller
 
     public function store(Request $request)
     {
+        request()->validate([
+            'name' => 'required',
+            'descriptions' => 'required',
+            'dateStart' => 'required',
+            'dateEnd' =>'required',
+            'timeStart' =>'required',
+            'timeEnd' => 'required',
+            'locations' => 'required',
+            'price' => 'required',
+            'old_price'=> 'required',
+            'image' => 'required|image',
+        ]);
+    
         $user = Auth::user();
 
-    
-        
+        $image = $request->file("image");
+        $filename =  $image->hashName();
+        $image->storeAs("public/img/" . $filename);
 
-        $event = Event::create(
-            [
-                'user_id' => $user->id,
-                'name' => $request->name,
-                'descriptions' => $request->descriptions,
-                'dateStart' => $request->dateStart,
-                'dateEnd' => $request->dateEnd,
-                'timeStart' => $request->timeStart,
-                'timeEnd' => $request->timeEnd,
-                'locations' => $request->locations,
-                'price' => $request->price,
-            ]
-        );
-
+        Event::create([
+            'user_id' => $user->id,
+            'name' => $request->name,
+            'descriptions' => $request->descriptions,
+            'dateStart' => $request->dateStart,
+            'dateEnd' => $request->dateEnd,
+            'timeStart' => $request->timeStart,
+            'timeEnd' => $request->timeEnd,
+            'locations' => $request->locations,
+            'price' => $request->price,
+            'old_price'=> $request->old_price,
+            'image' => $filename,
+        ]);
         // Event::create($data);
 
         return back();
@@ -76,7 +88,7 @@ class EventController extends Controller
         if (!Auth::check()) {
             // Handle unauthenticated user (e.g., redirect to login page)
             return redirect()->route('register');
-        }   
+        }
 
         $user = Auth::user();
         if (!$user->events()->where('calendar_id', $eventId)->exists()) {
@@ -105,18 +117,19 @@ class EventController extends Controller
             ],
             'mode'        => 'payment', // the mode  of payment
             'success_url' => route('success'), // route when success 
-            'cancel_url'  => route('dashboard'), // route when  failed or canceled
+            'cancel_url'  => route('welcome'), // route when  failed or canceled
         ]);
 
         return redirect()->away($session->url);
-        
     }
-    
+
 
 
 
     public function show(Event $event)
     {
+        $events = Event::where('id', $event->id)->get();
+        return view('detail.detail', compact('events'));
 
         // return view('calender', compact('calender'));
 
@@ -158,6 +171,7 @@ class EventController extends Controller
             'timeEnd' => $request->timeEnd,
             'locations' => $request->locations,
             'price' => $request->price,
+            'old_price'=> $request->old_price,
         ];
 
         $event->update($data);
@@ -171,4 +185,8 @@ class EventController extends Controller
         $event->delete();
         return back()->with('success', 'Event deleted successfully!');
     }
+
+    
+    
+
 }

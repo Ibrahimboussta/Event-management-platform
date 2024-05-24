@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
-            $events = Event::all();
+            $events = Event::latest()->paginate(8);
             $users = Auth()->user();
             $user = User::all();
             view()->share(['events' => $events]);
